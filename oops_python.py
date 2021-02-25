@@ -1,16 +1,16 @@
-'''
+ '''
 This file is to demonstrate the presence of user defined keywords
 Author:Ravikumar M Pise
 Contact:ravikumar.pise@ltts.com
 Date of creation:25/02/21
-'''
+ '''
 
 
 import re  # To import regular expression
 n=input("enter no of inputs:")
 class Mini_project():  # to create Class
     def __init__(self):  # constructor
-        self.count = 0  #initialize count as 0
+        self.count = 0  # initialize count as 0
         #self.n=input("enter no of inputs:")
         self.in_file = open("input.txt", "r")  # to open input file
         self.keyword = input("enter input keyword:")  # to input keyword from user
