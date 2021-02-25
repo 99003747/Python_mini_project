@@ -11,11 +11,7 @@ class mini_project():
 
     def read_function(self):
         file_read = self.in_file.read()
-        file_list1 = file_read.split()
-        file_list = re.split(r"\W+", str(file_list1))
-        return file_list
-
-    def match_funtion(self, file_list):
+        file_list = re.split(r"\W+", str(file_read))
         for i in range(len(file_list)):
             match = re.fullmatch(self.keyword, file_list[i], re.M | re.I)
             if match:
@@ -24,14 +20,12 @@ class mini_project():
                 self.out_file.write(string)
                 self.out_file.write("\n")
         self.out_file.write("Total number of " + self.keyword + " in input file are ")
-        self.out_file.write(str(count))
-
+        self.out_file.write(str(self.count))
     def close_file(self):
         self.in_file.close()
         self.out_file.close()
 
 
 obj = mini_project()
-file_list = obj.read_function()
-obj.match_function(file_list)
+obj.read_function()
 obj.close_file()
