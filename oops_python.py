@@ -12,23 +12,24 @@ class Mini_project:  # to create Class
     def __init__(self):  # constructor
         self.count = 0  # initialize count as 0
         self.in_file = open("input.txt", "r")  # to open input file
-        self.keyword = input("enter input keyword:")  # to input keyword from user
-        self.out_file_name = self.keyword + '.txt'  # to create text file of name keyword
-        self.out_file = open(self.out_file_name, 'w')  # to open above created file
+        self.keyword = input("enter input keyword:")  # input from user
+        self.out_file_name = self.keyword + '.txt'  # to creating txt file
+        self.out_file = open(self.out_file_name, 'w')  # to open txt file
 
     def read_function(self):  # to define function to read
         file_read = self.in_file.read()
-        file_list = re.split(r'\W+', str(file_read))  # to split words of input file and to store it in a list
-        for i in range(len(file_list)):
-            match = re.fullmatch(self.keyword, file_list[i], re.M | re.I)  # to check match keyword to words of list
+        f_list = re.split(r'\W+', str(file_read))  # to split words,store
+        for i in range(len(f_list)):
+            # to check match keyword to words of list
+            match = re.fullmatch(self.keyword, f_list[i], re.M | re.I)
             if match:
-                self.count += 1  # to increment count if keyword matches with word in list
+                self.count += 1  # to increment count,keyword matches word
                 # to store previous and next word of keyword
-                string = file_list[i - 1] + " " + file_list[i] + " " + file_list[i + 1]
+                string = f_list[i - 1] + " " + f_list[i] + " " + f_list[i + 1]
                 self.out_file.write(string)  # to write string into out_file
                 self.out_file.write("\n")  # to separate line by line
-        self.out_file.write("Total number of " + self.keyword + " in input file are: ")
-        self.out_file.write(str(self.count))  # to store number of keywords present in input file
+        self.out_file.write("Total " + self.keyword + " in input file is: ")
+        self.out_file.write(str(self.count))  # to store number of keyword
 
     def close_file(self):  # function to close opened files
         self.in_file.close()  # to close in_file
