@@ -6,3 +6,6 @@
 ## 5.checks keyword from input file,if present count is incremented.
 ## 6.to write string into one file which includes the keyword,previous,next word of keyword
 ## 7.to write number of times keyword repeated.
+## Ravikumar M Pise
+## ravikumar.pise@ltts.com
+## PS No:99003747
